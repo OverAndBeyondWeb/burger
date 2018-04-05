@@ -12,3 +12,4 @@ connection.connect(function(err) {
   console.log('connection: ' + connection.threadId);
 });
 
+module.exports = connection;
