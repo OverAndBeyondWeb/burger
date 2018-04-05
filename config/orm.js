@@ -1,8 +1,14 @@
 var connection = require('./connection');
 
 var orm = {
-  selectAll: function() {
-    console.log('all selected');
+  selectAll: function(table, cb) {
+    connection.query(
+      'SELECT * FROM ' + table,
+      function(err, results) {
+        if (err) throw err;
+        cb(results);
+      }
+    );
   },
   insertOne: function() {
     console.log('one selected');
@@ -11,9 +17,5 @@ var orm = {
     console.log('one updated');
   }
 }
-
-orm.selectAll();
-orm.insertOne();
-orm.updateOne();
 
 module.exports = orm;
