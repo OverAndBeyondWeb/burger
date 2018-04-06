@@ -6,14 +6,17 @@ var burger = {
       cb(results);
     });
   },
-  insertOne: function(cb) {
-    orm.insertOne('burgers', 'burger_name', 'salsa burger', function(results) {
+  createBurger: function(burger, cb) {
+    orm.insertOne('burgers', 'burger_name', burger, function(results) {
       cb(results);
     });
+  },
+  devourBurger: function(cb) {
+    orm.updateOne();
   }
 }
 
-burger.insertOne(function(result) {
+burger.createBurger('cheddar burger', function(result) {
   console.log(result);
 });
 
