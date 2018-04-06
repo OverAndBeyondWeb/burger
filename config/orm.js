@@ -10,12 +10,20 @@ var orm = {
       }
     );
   },
-  insertOne: function() {
-    console.log('one selected');
+  insertOne: function(table, column1, value1, cb) {
+    var query = 'INSERT INTO ' + table + '(' + column1 + ') ' + 'VALUES ("' + value1 + '")';
+    console.log(query);
+    connection.query(
+      query,
+      function(err, results) {
+        if (err) throw err;
+        cb(results);
+      }
+    );
   },
   updateOne: function() {
     console.log('one updated');
   }
 }
-
+ 
 module.exports = orm;
