@@ -21,8 +21,17 @@ var orm = {
       }
     );
   },
-  updateOne: function() {
-    console.log('one updated');
+  updateOne: function(cb) {
+    var query = 'UPDATE burgers SET devour=true WHERE id=1';
+    console.log(query);
+
+    connection.query(
+      query,
+      function(err, results) {
+        if (err) throw err;
+        cb(results);
+      }
+    );
   }
 }
  

@@ -12,12 +12,14 @@ var burger = {
     });
   },
   devourBurger: function(cb) {
-    orm.updateOne();
+    orm.updateOne(function() {
+      cb(results);
+    });
   }
 }
 
-burger.createBurger('cheddar burger', function(result) {
-  console.log(result);
+burger.devourBurger(function(results) {
+  console.log(results);
 });
 
 module.exports = burger;
