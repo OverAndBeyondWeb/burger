@@ -18,8 +18,8 @@ var burger = {
   }
 }
 
-burger.devourBurger(function(results) {
-  console.log(results);
-});
+// burger.devourBurger(function(results) {
+//   console.log(results);
+// });
 
 module.exports = burger;
