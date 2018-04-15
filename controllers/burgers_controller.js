@@ -6,8 +6,10 @@ router.get('/', function(req, res) {
   res.render('index', {secret: 'handlebars init'});
 });
 
-router.post('', function(req, res) {
-
+router.get('/api/all-burgers', function(req, res) {
+  burgerModel.allBurgers(function(results) {
+    res.json(results);
+  });
 });
 
 module.exports = router;
