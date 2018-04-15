@@ -6,6 +6,8 @@ var router = require('./controllers/burgers_controller');
 
 var PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({urlencoded: false}));
 app.use(bodyParser.json());
 
