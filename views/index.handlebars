@@ -3,16 +3,19 @@
     <header class="hero">
       <h1 class="heading">Eat Da Burger</h1>
     </header>
-    <section class="uneaten-burgers">
-      <form action="/api/all-burgers" class="create-burger">
+
+    <section class="enter-a-burger">
+      <form action="/create" method="POST" class="create-burger">
         <label for="new-burger">Enter a Burger</label>
-        <br>
-        <input type="text" id="new-burger" name="new-burger">
-        <br>
+        <input type="text" id="new-burger" name="burger">
         <button type="submit">Submit Burger</button>
       </form>
+    </section>
+
+    <section class="uneaten-burgers">
+      
       <ul class="burger-list">
-        
+
       </ul>
     </section>
     <section class="eaten-burgers">

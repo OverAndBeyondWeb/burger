@@ -15,8 +15,12 @@ router.get('/api/all-burgers', function(req, res) {
   });
 });
 
-router.post('/api/all-burgers', function(req, res) {
-  burgerModel.createBurger();
+router.post('/create', function(req, res) {
+  console.log(req.body.burger);
+  burgerModel.createBurger(req.body.burger, function(results) {
+    console.log(results);
+  });
+  res.redirect('/');
 });
 
 module.exports = router;

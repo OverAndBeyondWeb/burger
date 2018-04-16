@@ -32,6 +32,16 @@ h1.heading {
   font-size: 72px;
 }
 
+.enter-a-burger {
+  position: relative;
+}
+
+.create-burger {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .burger-list, .eaten-burgers {
   padding: 25px;
 }
