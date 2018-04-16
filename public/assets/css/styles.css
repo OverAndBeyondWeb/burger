@@ -42,6 +42,8 @@ h1.heading {
   transform: translateX(-50%);
 }
 
-.burger-list, .eaten-burgers {
+.uneaten-burgers, .eaten-burgers {
+  display: inline-block;
+  width: 49%;
   padding: 25px;
 }
