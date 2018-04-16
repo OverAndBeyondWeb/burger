@@ -21,8 +21,9 @@ var orm = {
       }
     );
   },
-  updateOne: function(cb) {
-    var query = 'UPDATE burgers SET devour=true WHERE id=1';
+  updateOne: function(id, cb) {
+    var query = 'UPDATE burgers SET devour=true WHERE id=' + id ;
+    console.log(query);
     console.log(query);
 
     connection.query(

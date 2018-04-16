@@ -23,4 +23,12 @@ router.post('/create', function(req, res) {
   res.redirect('/');
 });
 
+router.post('/update-burger', function(req, res) {
+  var id = req.body.id;
+  burgerModel.devourBurger(id, function(results) {
+    console.log(results);
+  });
+  res.redirect('/');
+});
+
 module.exports = router;
