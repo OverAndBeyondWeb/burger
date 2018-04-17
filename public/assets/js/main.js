@@ -11,12 +11,15 @@ $.get('/api/all-burgers', function(data) {
       burger.append(devourBtn);
       $('.burger-list').append(burger);
 
-      $('.devour').click(function() {
-        var id = $(this).attr('data-id');
-        $.post('/update-burger', {id: id});
-      });
     }
   })
+});
+
+$('.uneaten-burgers').on('click', '.devour', function() {
+  var id = $(this).attr('data-id');
+  $.post('/', {id: id}, function() {
+    location.reload();
+  });
 });
 
 

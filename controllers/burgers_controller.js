@@ -5,6 +5,7 @@ var burgerModel = require('../models/burgers');
 router.get('/test', function(req, res) {
   res.sendFile(test.html);
 });
+
 router.get('/', function(req, res) {
   res.render('index', {secret: 'handlebars init'});
 });
@@ -23,12 +24,12 @@ router.post('/create', function(req, res) {
   res.redirect('/');
 });
 
-router.post('/update-burger', function(req, res) {
+router.post('/', function(req, res) {
   var id = req.body.id;
   burgerModel.devourBurger(id, function(results) {
     console.log(results);
   });
-  res.redirect('/');
+  res.end();
 });
 
 module.exports = router;
